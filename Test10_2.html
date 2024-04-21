@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="JS/jquery-1.9.1.min.js"></script>
+
+    <script>
+        //文档准备就绪函数
+        /*半成品 不做了 */
+        $(function () {
+            /*设置整个页面变黑*/
+            $("body").attr("style","background:black")
+
+            $(document).click(function(e)
+            {
+                /*获取当前位置*/
+                 console.log($("#mouseXY").position())
+                /*设置人物转向*/
+                if (e.pageX>$("#mouseXY").left){
+                    alert("asdad")
+                }
+                /*动画*/
+                $("#mouseXY").animate({left:e.pageX,top:e.pageY },2000,"swing",function(){console.log('123');});
+                console.log($("#mouseXY").is( ':animated'))
+                if ($("#mouseXY").is( ':animated')){
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id='mouseXY' style="position: absolute"><img  id="img1" src="img/player2.gif" style="border: 0;position: absolute" /></div>
+</body>
+</html>
